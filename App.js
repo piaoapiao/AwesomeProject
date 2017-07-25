@@ -1,14 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, View,TextInput } from 'react-native';
+import { StyleSheet, Text, View,TextInput ,Image,Button,Alert} from 'react-native';
 
 export default class App extends React.Component {
+
+//  onPressLearnMore()
+//  {
+//     console.log("click")
+//  }
+
+ onPressButton() {
+    Alert.alert('You tapped the button!')
+  }
+
   render() {
     return (
       <View style={styles.container}>
         <Text>1Open up App.js to start working on your app!</Text>
         <Text>Changes you make will automatically reload.</Text>
-        <Text >Shake your phone to open the developer menu.</Text>
+        <Text >Shake your phone to open the developer menu.</Text>         
 
+         <Image source={require('./img/image.jpg')} style={{width:100,height:100}} />
+
+         <Button
+            title = "click"
+            color = "red"
+            onPress={() => { Alert.alert('You tapped the button!')}}
+            accessibilityLabel="Learn more about this purple button"
+         />
+
+
+         <Button
+            title = "click2"
+            color = "red"
+            onPress={this.onPressButton}
+            accessibilityLabel="Learn more about this purple button"
+         />
 
           <TextInput   
              style={styles.style_pwd_input}                
